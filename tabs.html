@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <script>
+        function change_tab(id) {
+            document.getElementById("page_content").innerHTML = document.getElementById(id + "_desc").innerHTML;
+            document.getElementById("page1").className = "notselected";
+            document.getElementById("page2").className = "notselected";
+            document.getElementById("page3").className = "notselected";
+            document.getElementById(id).className = "selected";
+        }
+    </script>
+</head>
+
+<body>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            margin: 0px auto;
+            padding-left: 150px;
+            font-family: helvetica;
+            height: 2000px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 35px;
+            margin-top: 60px;
+            color: #BEF781;
+        }
+
+        h1 p {
+            text-align: center;
+            margin: 0px;
+            font-size: 18px;
+            text-decoration: underline;
+            color: white;
+        }
+
+        #main_content {
+            margin-top: 50px;
+            width: 500px;
+            margin-left: 250px;
+        }
+
+        #main_content li {
+            display: inline;
+            list-style-type: none;
+            background-color: #688A08;
+            padding: 10px;
+            border-radius: 5px 5px 0px 0px;
+            color: #292A0A;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #main_content li.notselected {
+            background-color: #688A08;
+            color: #292A0A;
+        }
+
+        #main_content li.selected {
+            background-color: #D0F5A9;
+            color: #292A0A;
+        }
+
+        #main_content .hidden_desc {
+            display: none;
+            visibility: hidden;
+        }
+
+        #main_content #page_content {
+            background-color: #D0F5A9;
+            padding: 10px;
+            margin-top: 9px;
+            border-radius: 0px 5px 5px 5px;
+            color: #2E2E2E;
+            line-height: 1.6em;
+            word-spacing: 4px;
+        }
+    </style>
+    <div id="main_content">
+
+        <li class="selected" id="page1" onclick="change_tab(this.id);">Home</li>
+        <li class="notselected" id="page2" onclick="change_tab(this.id);">Our Mission</li>
+        <li class="notselected" id="page3" onclick="change_tab(this.id);">Contact Us</li>
+
+        <div class='hidden_desc' id="page1_desc">
+            <h2>Home</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi illum impedit quas nemo, ipsa veritatis tempora dolore aliquid molestiae excepturi repellat, voluptates perferendis magni vitae natus commodi explicabo inventore. Ipsum!
+        </div>
+
+        <div class='hidden_desc' id="page2_desc">
+            <h2>Our Mission</h2>
+            Lorem ipsum,
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, modi. Optio unde hic consequuntur ipsum necessitatibus, odio voluptatem natus ipsam deleniti libero ut facere obcaecati dolore illum! Dolore, commodi doloribus. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem quo, fugit esse quaerat optio dolorum impedit necessitatibus illo, quisquam tempore omnis earum non cum ab similique! Maiores, dicta totam.
+            dolor sit amet consectetur adipisicing elit. Natus, at nemo dolor sequi voluptatem ipsam consequuntur sed explicabo itaque voluptatum adipisci neque corrupti magnam doloremque rem ratione consequatur quia iste.
+        </div>
+
+        <div class='hidden_desc' id="page3_desc">
+            <h2>Contact Us</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque commodi voluptatibus dignissimos, dolor necessitatibus in at, possimus unde architecto est minus quia iusto velit nam tenetur minima neque magnam beatae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cumque beatae facere pariatur eos consectetur atque ipsam excepturi hic, labore dolorem vitae optio minus! Ratione natus quo laudantium assumenda error?
+        </div>
+
+        <div id="page_content">
+            <h2>Home</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum inventore possimus quo recusandae explicabo, cumque natus, placeat eum eveniet sunt harum alias id quae atque laboriosam ipsam nisi! Odit, accusantium.
+        </div>
+
+    </div>
+
+</body>
+
+</html>

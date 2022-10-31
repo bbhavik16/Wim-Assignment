@@ -9,14 +9,28 @@
 
 <body>
     <div class="container">
-        <div class="mt-5 card col-8 offset-2 pl-4" id="makepdf" style="background-color: rgb(215, 185, 185); padding-left: 15px; padding-right: 15px;">
-            <h1 style="text-align: center;">London</h1>
-            <p class="pl-4">London is the capital city of England. It is the most populous city in the United
-                Kingdom, with a metropolitan area of over 13 million inhabitants. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium  </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, itaque esse saepe placeat aperiam excepturi libero cum voluptatibus modi. Architecto voluptatem totam perspiciatis itaque sit ad suscipit at hic dolores. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, ex? Similique rerum ratione quisquam labore, dolore nemo nulla voluptas eaque, a sint illo quibusdam maiores voluptate laborum, possimus magnam reiciendis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum voluptates exercitationem dolore aliquam nulla repellat odio architecto labore ipsam praesentium, quasi molestiae, molestias illo provident commodi accusamus quas reiciendis. Eveniet.</p>
+        <div class="mt-5 card col-8 offset-2 pl-4" id="makepdf" style="background-color: rgb(204, 198, 203); padding-left: 15px; padding-right: 15px;">
+            <h1 style="text-align: center;">About Node.js</h1>
+            <p class="pl-4 h5">As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, Node.js will sleep. </p>
+            <br>
+            <p class="pl-4 h5">This is in contrast to today's more common concurrency model, in which OS threads are employed. Thread-based networking is relatively inefficient and very difficult to use. Furthermore, users of Node.js are free from worries of dead-locking the process, since there are no locks. Almost no function in Node.js directly performs I/O, so the process never blocks except when the I/O is performed using synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very reasonable to develop in Node.js.
+                If some of this language is unfamiliar, there is a full article on Blocking vs. Non-Blocking.</p>
+            <br>
+            <p class="pl-4 h5">
+            Node.js is similar in design to, and influenced by, systems like Ruby's Event Machine and Python's Twisted. Node.js takes the event model a bit further. It presents an event loop as a runtime construct instead of as a library. In other systems, there is always a blocking call to start the event-loop. Typically, behavior is defined through callbacks at the beginning of a script, and at the end a server is started through a blocking call like EventMachine::run(). In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js exits the event loop when there are no more callbacks to perform. This behavior is like browser JavaScript — the event loop is hidden from the user.
+            </p>
+            <br>
+            <p class="pl-4 h5">
+                HTTP is a first-class citizen in Node.js, designed with streaming and low latency in mind. This makes Node.js well suited for the foundation of a web library or framework.
+            </p>
+            <br>
+            <p  class="pl-4 h5">
+                Node.js being designed without threads doesn't mean you can't take advantage of multiple cores in your environment. Child processes can be spawned by using our child_process.fork() API, and are designed to be easy to communicate with. Built upon that same interface is the cluster module, which allows you to share sockets between processes to enable load balancing over your cores.
+            </p>
+
         </div>
         <div class="row">
-            <button id="button" type="button" class="btn btn-dark btn-lg mt-4 col-2 offset-5">Generate PDF</button>
+            <button id="button" type="button" class="btn btn-success btn-lg mt-4 col-2 offset-5">Generate PDF</button>
         </div>
     </div>
     <script>

@@ -1,126 +1,145 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 
 <body>
 
 
-<h3 class="mt-4 mb-4" style="text-align: center;">Data of number of students taking scholarships from our website</h2>
+  <div class="row ">
+    <h1 style="text-align: center; margin-bottom: 60px;">VJTI PLACEMENT STATISTICS 2019-20</h1>
+    <div class="col col-md-6 mb-5">
+      <canvas id="barchart" style="height:400px;"></canvas>
+    </div>
+    <script>
+      const data = [8.6, 7.1, 5.3, 5.2, 4.1, 3.9, 4.0, 3.7, 3.2];
+      const ctx = document.getElementById('barchart')
+      const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['COMP', 'IT', 'EXTC', 'EX', 'ELECT', 'MECH', 'CIVIL', 'PROD', 'TEX'],
+          datasets: [{
+            label: 'Average CTC',
+            data: data,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.6)',
+              'rgba(153, 102, 255, 0.6)',
+              'rgba(255, 159, 64, 0.6)',
 
-<canvas id="myChart4" style="width:100%;max-width:700px; display: inline-block; margin-left: 30px; margin-bottom: 30px;">Bar Chart</canvas>
-<canvas class="ml-4" id="myChart1" style="width:100%;max-width:700px; display: inline-block; margin-left: 40px; margin-bottom: 30px;"></canvas>
-<canvas id="myChart2" style="width:100%;max-width:700px; display: inline-block; margin-left: 30px; margin-bottom: 30px;"></canvas>
-<canvas id="myChart3" style="width:100%;max-width:700px; display: inline-block; margin-bottom: 30px;"></canvas>
-<script>
-var xValues = ["Italy", "China", "Russia", "Argentina", "USA"];
-var yValues = [38, 49, 44, 24, 35];
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
-];
-var x4Values = ["Italy", "China", "Russia", "Argentina", "USA"];
-var y4Values = [38, 49, 44, 24, 35];
-var barColors = ["red", "green","blue","orange","brown"];
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
 
-new Chart("myChart4", {
-  type: "bar",
-  data: {
-    labels: x4Values,
-    datasets: [{
-      backgroundColor: barColors,
-      data: y4Values
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "No of students taking scholarship"
-    }
-  }
-});
 
-var x1Values = [50,60,70,80,90,100,110,120,130,140,150];
-var y1Values = [7,8,8,9,9,9,10,11,14,14,15];
+            borderWidth: 1
+          }],
 
-new Chart("myChart1", {
-  type: "line",
-  data: {
-    labels: x1Values,
-    datasets: [{
-      fill: false,
-      lineTension: 0,
-      backgroundColor: "rgba(0,0,255,1.0)",
-      borderColor: "rgba(0,0,255,0.1)",
-      data: y1Values
-    }]
-  },
-  options: {
-    legend: {display: false},
-    scales: {
-      yAxes: [{ticks: {min: 6, max:16}}],
-    }
-  }
-});
-var x2Values = [100,200,300,400,500,600,700,800,900,1000];
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
 
-new Chart("myChart2", {
-  type: "line",
-  data: {
-    labels: x2Values,
-    datasets: [{ 
-      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-      borderColor: "red",
-      fill: false
-    }, { 
-      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
-      borderColor: "green",
-      fill: false
-    }, { 
-      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-      borderColor: "blue",
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false}
-  }
-});
-var x3Values = ["Italy", "China", "Russia", "Argentina", "USA"];
-var y3Values = [38, 49, 44, 24, 35];
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
-];
+          animations: {
+            backgroundColor: {
+              type: 'color',
+              delay: 1000,
+              duration: 5000,
+              easing: 'easeInQuad',
+              to: 'blue',
+              from: 'lightGreen',
+              loop: true,
+            }
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: 'BRANCH-WISE PLACEMENT',
+              color: "black",
+              padding: {
+                top: 10,
+                bottom: 5
+              }
+            },
+            legend: {
+              labels: {
+                boxWidth: 0,
+                color: "black",
+              }
+            }
+          },
 
-new Chart("myChart3", {
-  type: "pie",
-  data: {
-    labels: x3Values,
-    datasets: [{
-      backgroundColor: barColors,
-      data: y3Values
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "No of students taking scholarships"
-    }
-  }
-});
-</script>
+          scales: {
+            y: {
+              beginAtZero: true,
+              color: "black"
+            }
 
+          }
+
+        }
+      });
+    </script>
+    <div class="col col-md-6 mb-3">
+      <canvas id="PieChart"></canvas>
+      <script>
+        const piedata = [71, 73, 67, 71, 42, 62, 59, 43, 40]
+        var xValues = ['COMP', 'IT', 'EXTC', 'EX', 'ELECT', 'MECH', 'CIVIL', 'PROD', 'TEX'];
+        var yValues = piedata;
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#e8c3b9",
+          "#1e7145",
+          "#FF00FF",
+          "#40E0D0",
+          "#ff7518",
+          "#50C878"
+        ];
+
+
+
+        new Chart("PieChart", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            plugins: {
+              responsive: true,
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: "No Of Eligible Students Selected"
+              },
+              hoverOffset: 6
+            }
+          }
+        });
+      </script>
+      
+    </div>
 </body>
+
 </html>

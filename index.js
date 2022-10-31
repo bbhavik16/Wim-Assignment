@@ -33,6 +33,10 @@ app.get('/form', (req, res) => {
   res.sendFile(__dirname + '/form.html')
 })
 
+app.get('/tabs', (req, res) => {
+  res.sendFile(__dirname + '/tabs.html')
+})
+
 app.post("/paynow", [parseUrl, parseJson], (req, res) => {
   // Route for making payment
 
